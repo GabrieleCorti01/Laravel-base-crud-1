@@ -1,0 +1,10 @@
+.row{
+    display: flex;
+    padding: 100px;
+    .box-comic{
+        background-color: lightgrey;
+        p{
+            font-size: 0.7em;
+        }
+    }
+}

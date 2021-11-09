@@ -11243,3 +11243,13 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.row {
+  display: flex;
+  padding: 100px;
+}
+.row .box-comic {
+  background-color: lightgrey;
+}
+.row .box-comic p {
+  font-size: 0.7em;
+}

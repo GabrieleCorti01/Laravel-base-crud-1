@@ -11,7 +11,6 @@ class ComicController extends Controller
     {
         $comics = Comic::all();
         
-
         return view('comics.index', compact('comics'));
     }
 
@@ -20,5 +19,24 @@ class ComicController extends Controller
         $comic = Comic::findorfail($id);
 
         return view('comics.show', compact('comic'));
+    }
+
+
+    public function create()
+    {
+        return view('comics.create');
+    }
+
+
+    public function store(Request $request)
+    {
+        $comic = $request->all();
+
+        $newComic = new Comic;
+        $newComic->title = $comic['title'];
+        $newComic->author = $comic['author'];
+        $newComic->save();
+        
+        return redirect()->route('comics.show', $newComic->id);
     }
 }
